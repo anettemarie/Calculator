@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vastus</title>
+</head>
+<body>
+   
+<form action="/calculate" method="post">
+<h1> a² + b² = c²</h1>
+        <label for="fname">Külg a:</label><br>
+        <input type="number" id="fname" name="sideA" value="{{sideA}}"><br>
+        <label for="lname">Külg b:</label><br>
+        <input type="number" id="lname" name="sideB" value="{{sideB}}"><br>
+    
+        <label for="vname">Külg c:</label><br>
+        <input type="number" id="vname"  value="{{hypotenuse}}"><br>
+
+       <br><input type="submit" value="Arvuta"><br>
+</form>
+
+<h2> {{sideA}} <sup>2</sup> + {{sideB}} <sup>2</sup> = {{hypotenuse}}</h2>
+
+</body>
+</html>

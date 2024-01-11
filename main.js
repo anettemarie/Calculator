@@ -1,4 +1,5 @@
 const express = require('express');
+const nunjucks =require('nunjucks');
 const path = require('path');
 const inputHandler = require('./inputHandler');
 const calculatorRoutes = require('./calculatorRoutes');
@@ -6,7 +7,13 @@ const calculatorRoutes = require('./calculatorRoutes');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+nunjucks.configure('views', {
+  autoescape: true,
+  express: app
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.urlencoded());
 app.use(express.json());
 
 app.get('/', (req, res) => {

@@ -5,7 +5,7 @@ const calculator = require('./calculator');
 router.post('/', (req, res) => {
   const { sideA, sideB } = req.body;
   const hypotenuse = calculator.calculateHypotenuse(sideA, sideB);
-  res.json({ hypotenuse });
+  res.render('calc.njk',{ hypotenuse,  sideA, sideB });
 });
 
 module.exports = router;
